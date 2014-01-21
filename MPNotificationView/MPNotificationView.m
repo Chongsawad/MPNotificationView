@@ -9,7 +9,7 @@
 #import "MPNotificationView.h"
 #import "OBGradientView.h"
 
-#define kMPNotificationHeight    40.0f
+#define kMPNotificationHeight    64.0f
 #define kMPNotificationIPadWidth 480.0f
 #define RADIANS(deg) ((deg) * M_PI / 180.0f)
 
@@ -334,7 +334,7 @@ static CGFloat const __imagePadding = 8.0f;
     }
     
     MPNotificationView * notification;
-    id nibNameOrClass = type ? _registeredTypes[type] : nil;
+    id nibNameOrClass = type ? _registeredTypes[type] : NSStringFromClass([self class]);
     if ([nibNameOrClass isKindOfClass:[NSString class]])
     {
         notification = [[NSBundle mainBundle] loadNibNamed:nibNameOrClass
